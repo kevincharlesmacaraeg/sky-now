@@ -60,64 +60,64 @@ export default function CompatibilityForm() {
   }
 
   const selectClass =
-    "bg-transparent text-white text-sm text-right outline-none cursor-pointer border-b border-white/20 pb-0.5 min-w-[130px] appearance-none"
+    "bg-transparent text-black text-sm text-right outline-none cursor-pointer border-b border-black/20 pb-0.5 min-w-[130px] appearance-none"
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center px-6 py-16">
       <div className="w-full max-w-xs">
 
         {/* Top glyph */}
-        <div className="text-center mb-8 text-white/20 text-xs tracking-[0.4em]">✦ ✦ ✦</div>
+        <div className="text-center mb-8 text-black/35 text-xs tracking-[0.4em]">✦ ✦ ✦</div>
 
         {/* Title */}
-        <h1 className="font-cormorant text-[2.2rem] leading-snug text-center font-light tracking-wide">
+        <h1 className="font-cormorant text-[2.2rem] leading-snug text-center font-light tracking-wide text-black">
           are you and kevin<br />a good match?
         </h1>
 
         {/* Kevin's placements */}
-        <div className="mt-5 mb-10 flex justify-center gap-4 text-[10px] text-white/25 tracking-[0.2em] uppercase">
+        <div className="mt-5 mb-10 flex justify-center gap-4 text-[10px] text-black/45 tracking-[0.2em] uppercase">
           <span>☀ capricorn</span>
           <span>↑ capricorn</span>
           <span>☽ libra</span>
         </div>
 
         {/* Divider */}
-        <div className="border-t border-white/8 mb-8" />
+        <div className="border-t border-black/15 mb-8" />
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-7">
-          <p className="text-[10px] tracking-[0.25em] uppercase text-white/30">your placements</p>
+          <p className="text-[10px] tracking-[0.25em] uppercase text-black/45">your placements</p>
 
           {/* Sun */}
           <label className="flex items-center justify-between">
-            <span className="text-[11px] text-white/40 tracking-[0.2em] uppercase flex items-center gap-2">
+            <span className="text-[11px] text-black/55 tracking-[0.2em] uppercase flex items-center gap-2">
               <span className="text-base">☀</span> sun
             </span>
             <select value={sun} onChange={e => setSun(e.target.value)} required className={selectClass}>
-              <option value="" disabled style={{ background: "#000" }}>—</option>
-              {SIGNS.map(s => <option key={s} value={s} style={{ background: "#000" }}>{s}</option>)}
+              <option value="" disabled style={{ background: "#fff" }}>—</option>
+              {SIGNS.map(s => <option key={s} value={s} style={{ background: "#fff" }}>{s}</option>)}
             </select>
           </label>
 
           {/* Moon */}
           <label className="flex items-center justify-between">
-            <span className="text-[11px] text-white/40 tracking-[0.2em] uppercase flex items-center gap-2">
+            <span className="text-[11px] text-black/55 tracking-[0.2em] uppercase flex items-center gap-2">
               <span className="text-base">☽</span> moon
             </span>
             <select value={moon} onChange={e => setMoon(e.target.value)} required className={selectClass}>
-              <option value="" disabled style={{ background: "#000" }}>—</option>
-              {SIGNS.map(s => <option key={s} value={s} style={{ background: "#000" }}>{s}</option>)}
+              <option value="" disabled style={{ background: "#fff" }}>—</option>
+              {SIGNS.map(s => <option key={s} value={s} style={{ background: "#fff" }}>{s}</option>)}
             </select>
           </label>
 
           {/* Rising */}
           <label className="flex items-center justify-between">
-            <span className="text-[11px] text-white/40 tracking-[0.2em] uppercase flex items-center gap-2">
+            <span className="text-[11px] text-black/55 tracking-[0.2em] uppercase flex items-center gap-2">
               <span className="text-base">↑</span> rising
             </span>
             <select value={rising} onChange={e => setRising(e.target.value)} required className={selectClass}>
-              <option value="" disabled style={{ background: "#000" }}>—</option>
-              {SIGNS.map(s => <option key={s} value={s} style={{ background: "#000" }}>{s}</option>)}
+              <option value="" disabled style={{ background: "#fff" }}>—</option>
+              {SIGNS.map(s => <option key={s} value={s} style={{ background: "#fff" }}>{s}</option>)}
             </select>
           </label>
 
@@ -125,7 +125,7 @@ export default function CompatibilityForm() {
             <button
               type="submit"
               disabled={!sun || !moon || !rising || stage === "thinking"}
-              className="w-full py-3 text-[10px] tracking-[0.3em] uppercase text-white/40 border border-white/10 hover:border-white/25 hover:text-white/70 transition-all duration-500 disabled:opacity-20 disabled:cursor-not-allowed"
+              className="w-full py-3 text-[10px] tracking-[0.3em] uppercase text-black/60 border border-black/25 hover:border-black/60 hover:text-black/90 transition-all duration-500 disabled:opacity-20 disabled:cursor-not-allowed"
             >
               ask the stars
             </button>
@@ -133,7 +133,7 @@ export default function CompatibilityForm() {
         </form>
 
         {/* Divider */}
-        <div className="border-t border-white/8 mt-8" />
+        <div className="border-t border-black/15 mt-8" />
 
         {/* Thinking */}
         {stage === "thinking" && (
@@ -142,7 +142,7 @@ export default function CompatibilityForm() {
               {STAR_POSITIONS.map((pos, i) => (
                 <span
                   key={i}
-                  className="absolute bottom-0 text-white/50 text-xs"
+                  className="absolute bottom-0 text-black/40 text-xs"
                   style={{
                     left: pos.left,
                     animation: `starFloat ${pos.duration} ${pos.delay} ease-in-out infinite`,
@@ -152,7 +152,7 @@ export default function CompatibilityForm() {
                 </span>
               ))}
             </div>
-            <p className="text-[10px] text-white/25 tracking-[0.3em] uppercase italic mt-3">
+            <p className="text-[10px] text-black/45 tracking-[0.3em] uppercase italic mt-3">
               reading the stars
             </p>
           </div>
@@ -162,15 +162,15 @@ export default function CompatibilityForm() {
         {stage === "result" && reading && (
           <div className="mt-10" style={{ animation: "fadeUp 1s ease forwards" }}>
             <p
-              className="font-cormorant font-light leading-loose text-white/85 italic"
+              className="font-cormorant font-light leading-loose text-black/80 italic"
               style={{ fontSize: "1.15rem", lineHeight: "2" }}
             >
               {reading}
             </p>
-            <div className="mt-8 text-center text-white/15 text-xs tracking-widest">✦</div>
+            <div className="mt-8 text-center text-black/30 text-xs tracking-widest">✦</div>
             <button
               onClick={() => { setStage("idle"); setReading("") }}
-              className="mt-5 w-full text-[10px] tracking-[0.25em] uppercase text-white/20 hover:text-white/45 transition-colors duration-300"
+              className="mt-5 w-full text-[10px] tracking-[0.25em] uppercase text-black/45 hover:text-black/70 transition-colors duration-300"
             >
               ask again
             </button>
